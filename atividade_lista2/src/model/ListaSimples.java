@@ -50,6 +50,22 @@ public class ListaSimples<T> {
 		return buffer;
 	}
 	
+	@Override
+	public String toString(){
+		if(this.inicio == null){
+			return "[]";
+		}
+		String text = "[";
+		No buffer = this.inicio;
+		text+= buffer.getValor();
+		while(buffer.getProximo()!=null){
+			buffer = buffer.getProximo();
+			text+= ", " + buffer.getValor();
+		}
+		text+="]";
+
+		return text;
+	}
 	
 	
 }

@@ -42,6 +42,7 @@ public class ListaDupla {
 	///e se tiver adicionar o nome nela, se não criar um nó com a letra e adicionar o nome depois
 	
 	public void add(String nome,String letra) {
+		
 		if(this.inicio == null) { //não tem nenhuma letra
 			No novo = new No();
 			novo.letra = letra;
@@ -51,10 +52,12 @@ public class ListaDupla {
 			this.inicio = novo;
 		}else {//se ja tem alguma letra
 			if(verificaNos(letra)) {//se ja tem um no com essa letra
+				
 				No existente = getLast(letra);
 				
 				existente.lista.append(nome);
 			}else {
+				
 				No novo = new No();
 				No ultimo = getLast("");
 				novo.letra = letra;
@@ -67,16 +70,25 @@ public class ListaDupla {
 		}
 	}
 	
+	public Boolean get(String nome) {
+		
+		return false;
+	}
 	
 	public Boolean verificaNos(String letra) {
 		No buffer = this.inicio;
+		
 		Boolean res = false;
-		do {
+		if(buffer.letra.equals(letra)) {
+			res = true;	
+		}
+		while(buffer.getProximo()!= null){
+			buffer = buffer.getProximo();
 			if(buffer.letra.equals(letra)) {
-				res = true;
+				res = true;	
 			}
-			buffer.getProximo();
-		}while(buffer.getProximo()!=null);
+			
+		}
 		return res;
 		
 			
@@ -94,12 +106,17 @@ public class ListaDupla {
 			}
 			return buffer;
 		}else {
+
 			No buffer = inicio;
+			if(buffer.letra.equals(letra)) {
+				return buffer;
+			}
 			while(buffer.proximo!=null) {
+
+				buffer = buffer.getProximo();
 				if(buffer.letra.equals(letra)) {
 					return buffer;
 				}
-				buffer = buffer.getProximo();
 			}
 			return buffer;
 		}
@@ -108,7 +125,13 @@ public class ListaDupla {
 	@Override
 	public String toString() {
 		String text ="[";
-		text+=this.inicio.getLetra();
+		No buffer = this.inicio;
+		text+=buffer.getValor().toString();
+		while(buffer.getProximo()!=null) {
+			
+			buffer = buffer.getProximo();
+			text+=", "+buffer.getValor().toString();
+		}
 		text+="]";
 		return text;
 	}
