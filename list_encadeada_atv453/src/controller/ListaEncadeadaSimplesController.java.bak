@@ -1,0 +1,27 @@
+package controller;
+
+import model.estrutura.ListaEncadeadaSimples;
+import model.estrutura.No;
+import model.estrutura.Pessoa;
+
+public class ListaEncadeadaSimplesController{
+    public ListaEncadeadaSimplesController() {
+        super();
+    }
+
+    public String teste() throws Exception{
+        ListaEncadeadaSimples<Pessoa> lista = new ListaEncadeadaSimples<>();
+
+        lista.append(new Pessoa("Kauan",19));
+        lista.append(new Pessoa("Pedro",19));
+        lista.append(new Pessoa("Hugo",25));
+
+        //lista.remove(2);
+		
+		lista.get(0).getValor().getNome();
+		lista.get(1).getValor().getNome();
+		lista.get(2).getValor().getNome();
+		
+        return lista.toString();
+    }
+}

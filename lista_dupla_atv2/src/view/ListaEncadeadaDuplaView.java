@@ -1,0 +1,15 @@
+package view;
+
+import controller.ListaEncadeadaDuplaController;
+
+public class ListaEncadeadaDuplaView{
+    public static void main(String[] args){
+        try{
+            ListaEncadeadaDuplaController obj = new ListaEncadeadaDuplaController();
+            System.out.println(obj.teste());
+			System.out.println(obj.reverse());
+        }catch( Exception e ){
+            e.printStackTrace();
+        }
+    }
+}
