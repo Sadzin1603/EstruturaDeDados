@@ -1,0 +1,11 @@
+package view;
+
+import controller.Controlador;
+
+public class View{
+	public static void main(String[] args){
+		Controlador c = new Controlador();
+		int retorno = c.potencia(2,4);
+		System.out.println("Total: " + retorno);
+	}
+}
