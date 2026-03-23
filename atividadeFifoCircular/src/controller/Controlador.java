@@ -10,8 +10,9 @@ public class Controlador {
 		lista.append(elemento);
 	}
 	
-	public void remover() {
-		lista.remover();
+	public String get() {
+		return lista.remover();
+		
 	}
 	
 	public String show() {

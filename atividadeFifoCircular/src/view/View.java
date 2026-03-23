@@ -16,13 +16,13 @@ public class View {
 		c.add(new Protocolo("http","DELETE"));
 		c.add(new Protocolo("http","PATCH"));
 		
-		c.remover();
-		c.remover();
-		c.remover();
-		c.remover();
-		c.remover();
-		c.remover();
-		c.remover();
+		System.out.println(c.get());
+		System.out.println(c.get());
+		System.out.println(c.get());
+		System.out.println(c.get());
+		//c.get();
+		//c.get();
+		//c.get();
 		
 		System.out.println(c.show());
 	}

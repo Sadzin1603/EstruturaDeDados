@@ -96,15 +96,12 @@ public class ListaCircular<T> {
 		return null;
 	}
 	
-	public void remover() {
+	public String remover() {
 		if(this.ponteiro==null) {
 			this.ponteiro = this.ultimo; 
 		}
 		//tenho q tirar da fila, mas só se não tiver vazio
-		
-		
-		
-		
+		String protocolo = this.ponteiro.getLista().getInicio().toString();
 		this.ponteiro.getLista().dequeue();
 		
 		this.ponteiro = this.ponteiro.getProximo();
@@ -115,7 +112,7 @@ public class ListaCircular<T> {
 				break;
 			}
 		}
-		
+		return protocolo;
 	}
 	
 	@Override

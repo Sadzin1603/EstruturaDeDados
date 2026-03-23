@@ -32,6 +32,9 @@ public class ListaFifo<T> {
 	private No inicio;
 	private String type;
 	
+	public String getInicio() {
+		return this.inicio.getValor().toString();
+	}
 	public String getType() {
 		return this.type;
 	}
